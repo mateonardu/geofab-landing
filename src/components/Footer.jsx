@@ -1,14 +1,39 @@
-import { marca } from '../config/site';
+import { useState } from 'react';
+import { marca, logo } from '../config/site';
+
+function BrandLogoWhite({ src, alt, className }) {
+  const [err, setErr] = useState(false);
+  if (err || !src) return (
+    <span className="font-bold text-white text-lg tracking-tight">{alt}</span>
+  );
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      style={{ minWidth: 180 }}
+      onError={() => setErr(true)}
+    />
+  );
+}
 
 export default function Footer() {
-  const waLink = `https://wa.me/${marca.whatsapp}`;
-
   return (
-    <footer className="bg-brand-green-dark text-white/80 py-10 px-4">
+    <footer className="bg-brand-green-dark text-white/70 py-10 px-4">
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="text-center sm:text-left">
-          <p className="font-bold text-white text-lg">{marca.nombre}</p>
-          <p className="text-sm mt-1">{marca.zona}</p>
+          <BrandLogoWhite
+            src={logo.white}
+            alt={logo.alt}
+            className="h-7 w-auto object-contain mb-2"
+          />
+          <p className="font-mono text-xs mt-1">{marca.zona}</p>
+          <a
+            href={`mailto:${marca.email}`}
+            className="font-mono text-xs hover:text-white transition-colors"
+          >
+            {marca.email}
+          </a>
         </div>
 
         <div className="flex items-center gap-5">
@@ -16,7 +41,7 @@ export default function Footer() {
             href={marca.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram de GeoFab"
+            aria-label="Instagram de GeoFab Argentina"
             className="hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-brand-yellow rounded"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -24,10 +49,10 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href={waLink}
+            href={`https://wa.me/${marca.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="WhatsApp de GeoFab"
+            aria-label="WhatsApp de GeoFab Argentina"
             className="hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-brand-yellow rounded"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -36,8 +61,8 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="text-sm text-center sm:text-right">
-          © {marca.anio} {marca.nombre}. Todos los derechos reservados.
+        <p className="font-mono text-xs text-center sm:text-right">
+          © {marca.anio} {marca.nombre}
         </p>
       </div>
     </footer>

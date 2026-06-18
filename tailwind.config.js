@@ -8,15 +8,17 @@ export default {
     extend: {
       colors: {
         brand: {
-          green:      '#2F7A3E',
-          'green-dark': '#1E4D28',
-          yellow:     '#F4C20D',
-          bg:         '#FAFAF7',
-          text:       '#2B2B2B',
+          green:        '#2A4909', // verde secundario — botones, acentos
+          'green-dark': '#142A09', // verde primario — fondo oscuro, texto
+          yellow:       '#F8D912', // acento — CTAs y detalles, usar con moderación
+          cream:        '#E5DEAC', // crema — fondos de sección
+          bg:           '#FFFFFF', // blanco base
+          text:         '#142A09', // texto oscuro = verde primario
         },
       },
       fontFamily: {
-        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        sans:  ['Poppins', 'system-ui', 'sans-serif'],
+        mono:  ['Roboto Mono', 'Consolas', 'monospace'],
       },
     },
   },
