@@ -31,7 +31,7 @@ function ProductCard({ producto }) {
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 bg-brand-yellow text-brand-green-dark text-xs font-bold px-4 py-2 rounded-sm uppercase tracking-wide hover:brightness-95 transition-all focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
+            className="inline-flex items-center gap-1.5 bg-brand-green text-white text-xs font-bold px-4 py-2 rounded-sm uppercase tracking-wide hover:bg-brand-green-dark transition-colors focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
             aria-label={`Consultar por WhatsApp sobre ${producto.nombre}`}
           >
             <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

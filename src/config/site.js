@@ -26,7 +26,7 @@ export const logo = {
 };
 
 // Imagen principal del Hero — reemplazar con foto real del producto estrella
-export const heroImagen = 'https://images.unsplash.com/photo-1611735341450-74d61e660ad2?w=900&q=80';
+export const heroImagen = '/img-hero.png';
 
 export const productos = [
   {

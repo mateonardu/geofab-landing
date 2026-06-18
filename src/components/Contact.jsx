@@ -4,7 +4,7 @@ export default function Contact() {
   const waLink = `https://wa.me/${marca.whatsapp}?text=Hola%20${encodeURIComponent(marca.nombre)}%2C%20quiero%20consultar`;
 
   return (
-    <section id="contacto" className="py-20 px-4 bg-brand-cream">
+    <section id="contacto" className="py-20 px-4 bg-white">
       <div className="max-w-2xl mx-auto text-center">
         <span className="inline-block font-mono text-brand-green text-xs uppercase tracking-widest mb-4">
           Contacto

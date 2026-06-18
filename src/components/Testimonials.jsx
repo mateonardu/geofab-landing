@@ -23,7 +23,7 @@ export default function Testimonials() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-brand-cream">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block text-brand-green font-semibold text-sm uppercase tracking-widest mb-3">
@@ -36,7 +36,7 @@ export default function Testimonials() {
           {testimonios.map((t, i) => (
             <blockquote
               key={i}
-              className={`bg-brand-bg rounded-2xl p-7 flex flex-col gap-4 ${inView ? 'animate-fade-up' : 'opacity-0'}`}
+              className={`bg-white rounded-sm p-7 flex flex-col gap-4 ${inView ? 'animate-fade-up' : 'opacity-0'}`}
               style={{ animationDelay: `${i * 120}ms` }}
             >
               <Stars count={t.estrellas} />

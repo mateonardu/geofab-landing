@@ -5,7 +5,7 @@ export default function About() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="nosotros" className="py-20 px-4 bg-brand-cream">
+    <section id="nosotros" className="py-20 px-4 bg-white">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <div
