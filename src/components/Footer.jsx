@@ -28,12 +28,6 @@ export default function Footer() {
             className="h-7 w-auto object-contain mb-2"
           />
           <p className="font-mono text-xs mt-1">{marca.zona}</p>
-          <a
-            href={`mailto:${marca.email}`}
-            className="font-mono text-xs hover:text-white transition-colors"
-          >
-            {marca.email}
-          </a>
         </div>
 
         <div className="flex items-center gap-5">

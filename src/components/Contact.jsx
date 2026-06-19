@@ -38,12 +38,6 @@ export default function Contact() {
           </a>
         </div>
 
-        <a
-          href={`mailto:${marca.email}`}
-          className="font-mono text-sm text-brand-green hover:text-brand-green-dark transition-colors"
-        >
-          {marca.email}
-        </a>
       </div>
     </section>
   );

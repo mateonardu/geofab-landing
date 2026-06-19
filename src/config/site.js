@@ -10,7 +10,7 @@ export const marca = {
   subtitulo:   'Mejor manejo hídrico. Mayor aireación. Raíces más sanas.',
   descripcion: 'Contenedores en tela geotextil para producción agrícola intensiva y horticultura profesional.',
   whatsapp:    '5491112345678', // formato wa.me: sin + ni espacios
-  email:       'info@geofabargentina.com',
+
   instagram:   'https://www.instagram.com/geofabargentina/',
   zona:        'Envíos a todo el país',
   anio:        '2024',
