@@ -19,7 +19,7 @@ export default function Navbar() {
         <img
           src={logo.color}
           alt={logo.alt}
-          className="h-24 sm:h-40 w-auto object-contain"
+          className="h-28 sm:h-48 w-auto object-contain"
         />
       </a>
 

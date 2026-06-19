@@ -248,11 +248,68 @@ export const productos = [
   },
   {
     id: 6,
+    slug:        'jardin-vertical',
     nombre:      'Jardín Vertical',
-    descripcion: 'Sistema de bolsillos en tela geotextil para cultivo vertical en pared. Ahorra espacio, ideal para hierbas y ornamentales.',
-    imagen:      '',
+    descripcion: 'Sistema de bolsillos geotextiles ensamblables. Convertí cualquier pared en un jardín, para bares, locales, oficinas, patios y balcones.',
+    subtitulo:   'SISTEMA DE BOLSILLOS GEOTEXTILES · ENSAMBLABLES',
+    tagline:     'Convertí cualquier pared en un jardín. Ideal para bares, locales, oficinas, patios y balcones.',
+    imagen:      '/img/jardin-s9.png',
     precio:      'Consultar',
     variantes:   [],
+    tamanos: [
+      {
+        id: 'chico', nombre: 'Chico', medidaBolsillo: '12 × 15 cm',
+        descripcion: 'Aromáticas, suculentas, plantines pequeños',
+        configuraciones: [
+          { id: '1',  nombre: '1 bolsillo',     medidasCubre: '18 × 20 cm',  imagen: '/img/jardin-bolsillo-s.png' },
+          { id: '3h', nombre: '3 horizontales', medidasCubre: '47 × 20 cm',  imagen: '/img/jardin-3hs.png'        },
+          { id: '3v', nombre: '3 verticales',   medidasCubre: '18 × 60 cm',  imagen: '/img/jardin-3vs.png'        },
+          { id: '9',  nombre: '9 bolsillos',    medidasCubre: '47 × 60 cm',  imagen: '/img/jardin-s9.png'         },
+        ],
+      },
+      {
+        id: 'mediano', nombre: 'Mediano', medidaBolsillo: '16 × 20 cm',
+        descripcion: 'Plantas decorativas, helechos, hierbas',
+        configuraciones: [
+          { id: '1',  nombre: '1 bolsillo',     medidasCubre: '23 × 27 cm',  imagen: '/img/jardin-bolsillo-s.png' },
+          { id: '3h', nombre: '3 horizontales', medidasCubre: '65 × 27 cm',  imagen: '/img/jardin-3hm.png'        },
+          { id: '3v', nombre: '3 verticales',   medidasCubre: '23 × 82 cm',  imagen: '/img/jardin-3vm.png'        },
+          { id: '9',  nombre: '9 bolsillos',    medidasCubre: '65 × 82 cm',  imagen: '/img/jardin-m9.png'         },
+        ],
+      },
+      {
+        id: 'grande', nombre: 'Grande', medidaBolsillo: '30 × 20 cm',
+        descripcion: 'Arbustivas, follaje denso, vegetales',
+        configuraciones: [
+          { id: '1',  nombre: '1 bolsillo',     medidasCubre: '38 × 27 cm',  imagen: '/img/jardin-bolsillo-l.png' },
+          { id: '3h', nombre: '3 horizontales', medidasCubre: '108 × 27 cm', imagen: '/img/jardin-3hm.png'        },
+          { id: '3v', nombre: '3 verticales',   medidasCubre: '38 × 82 cm',  imagen: '/img/jardin-3vm.png'        },
+          { id: '9',  nombre: '9 bolsillos',    medidasCubre: '108 × 82 cm', imagen: '/img/jardin-l9.png'         },
+        ],
+      },
+    ],
+    queIncluye: [
+      'Lona rafia impermeable con ojal (para colocar entre el jardín y la pared)',
+      'Tarugos y fijaciones',
+      'Ganchos de acople entre bolsillos cuando el artículo lo requiere',
+      'Opción con riego: 4 metros de manguera para conectar desde el jardín a la toma de agua',
+    ],
+    razonesTitle: 'Por qué elegir el geotextil para jardín vertical',
+    razones: [
+      { titulo: 'Ahorra espacio y embellece',            descripcion: 'Aprovechás paredes vacías. Decora a la vez que produce.' },
+      { titulo: 'Drenaje y circulación de aire',         descripcion: 'Geotextil respirable: raíces sanas, sin encharcamiento.' },
+      { titulo: 'Más durable que opciones de plástico',  descripcion: 'Resistente al sol, lluvia y manipulación.' },
+      { titulo: 'Saludable para las raíces',             descripcion: 'Evita el exceso de calor y la pudrición típica.' },
+      { titulo: 'Ideal para bares, patios, huertas urbanas', descripcion: 'Decoración funcional para gastronomía, oficinas y hoteles.' },
+    ],
+    fichaTecnica: [
+      { clave: 'Material',         valor: 'Geotextil no tejido 300 g/m²' },
+      { clave: 'Formatos',         valor: 'Módulo 1, 3H, 3V, 9, Panel 1 m² (combinables)' },
+      { clave: 'Tamaños bolsillo', valor: 'Chico, Mediano, Grande' },
+      { clave: 'Instalación',      valor: 'Cuelga directo sobre pared o estructura' },
+      { clave: 'Aplicaciones',     valor: 'Bares, oficinas, patios, balcones, huerta urbana' },
+      { clave: 'Medidas exactas',  valor: 'A consultar según proyecto' },
+    ],
   },
   {
     id: 7,
@@ -290,8 +347,8 @@ export const productos = [
 export const sobre = {
   titulo:     'Ingeniería radicular para el campo',
   historia:   'GeoFab Argentina fabrica contenedores en tela geotextil técnica para la producción agrícola y hortícola profesional. La tela geotextil promueve la poda aérea natural de raíces, elimina el enraizamiento circular y previene la pudrición por exceso de humedad. Diseñado para productores, viveros y proyectos de cultivo intensivo que exigen resultados consistentes y reproducibles.',
-  imagen:     'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80',
-  nombreFoto: 'Producción GeoFab Argentina',
+  imagen:     '/foto-info.png',
+  nombreFoto: 'GeoFab Argentina',
 };
 
 export const diferenciales = [

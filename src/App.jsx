@@ -8,6 +8,7 @@ import ProductoMulching from './pages/ProductoMulching';
 import ProductoTuberculo from './pages/ProductoTuberculo';
 import ProductoDecorativas from './pages/ProductoDecorativas';
 import ProductoHuerta from './pages/ProductoHuerta';
+import ProductoJardinVertical from './pages/ProductoJardinVertical';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/producto/maceta-tuberculo" element={<ProductoTuberculo />} />
           <Route path="/producto/macetas-decorativas" element={<ProductoDecorativas />} />
           <Route path="/producto/macetero-huerta" element={<ProductoHuerta />} />
+          <Route path="/producto/jardin-vertical" element={<ProductoJardinVertical />} />
         </Routes>
       </div>
     </BrowserRouter>
