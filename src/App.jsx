@@ -1,25 +1,24 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Catalog from './components/Catalog';
-import About from './components/About';
-import WhyUs from './components/WhyUs';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import LandingPage from './pages/LandingPage';
+import ProductoMacetas from './pages/ProductoMacetas';
+import ProductoAntimaleza from './pages/ProductoAntimaleza';
+import ProductoMulching from './pages/ProductoMulching';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-brand-bg font-sans">
-      <Navbar />
-      <main>
-        <Hero />
-        <Catalog />
-        <About />
-        <WhyUs />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-white font-sans">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/producto/macetas-geotextiles" element={<ProductoMacetas />} />
+          <Route path="/producto/tela-antimaleza" element={<ProductoAntimaleza />} />
+          <Route path="/producto/mulching-geotextil" element={<ProductoMulching />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }

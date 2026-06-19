@@ -19,7 +19,7 @@ export default function Navbar() {
         <img
           src={logo.color}
           alt={logo.alt}
-          className="h-24 sm:h-40 w-auto object-contain drop-shadow-xl"
+          className="h-24 sm:h-40 w-auto object-contain"
         />
       </a>
 
@@ -28,8 +28,8 @@ export default function Navbar() {
 
         {/* Links izquierda */}
         <nav className="hidden sm:flex items-center gap-7 text-sm font-semibold text-white/75 uppercase tracking-wide">
-          <a href="#catalogo" className="hover:text-brand-yellow transition-colors">Catálogo</a>
-          <a href="#nosotros" className="hover:text-brand-yellow transition-colors">Nosotros</a>
+          <a href="/#catalogo" className="hover:text-brand-yellow transition-colors">Catálogo</a>
+          <a href="/#nosotros" className="hover:text-brand-yellow transition-colors">Nosotros</a>
         </nav>
         <div className="sm:hidden" />
 
@@ -39,7 +39,7 @@ export default function Navbar() {
         {/* Links derecha + CTA outline */}
         <div className="flex items-center gap-5 sm:gap-6">
           <a
-            href="#contacto"
+            href="/#contacto"
             className="hidden sm:block text-sm font-semibold text-white/75 uppercase tracking-wide hover:text-brand-yellow transition-colors"
           >
             Contacto

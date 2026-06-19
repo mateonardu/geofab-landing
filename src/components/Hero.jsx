@@ -45,7 +45,7 @@ export default function Hero() {
 
         {/* Hero image */}
         <div className="animate-fade-up [animation-delay:200ms]">
-          <div className="relative rounded-sm overflow-hidden shadow-2xl aspect-[4/5]">
+          <div className="relative rounded-sm overflow-hidden aspect-[4/5]">
             <img
               src={heroImagen}
               alt="Maceta de tela geotextil GeoFab Argentina"
