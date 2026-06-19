@@ -44,7 +44,7 @@ export default function ProductoAntimaleza() {
               Volver al catálogo
             </Link>
             <div className="flex-1 flex items-center">
-              <div className="w-full aspect-square bg-white overflow-hidden rounded-sm">
+              <div className="w-full aspect-square bg-white overflow-hidden rounded-sm border border-brand-green/20">
                 <img
                   key={selected.imagen}
                   src={selected.imagen}

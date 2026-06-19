@@ -1,12 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { productos, marca } from '../config/site';
 import Footer from '../components/Footer';
-
-const CheckIcon = () => (
-  <svg className="w-5 h-5 text-brand-yellow flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-  </svg>
-);
 
 const WaIcon = () => (
   <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -14,18 +9,21 @@ const WaIcon = () => (
   </svg>
 );
 
-export default function ProductoMulching() {
-  const producto = productos.find(p => p.slug === 'mulching-geotextil');
+const DEFAULT_LITROS = 30;
+
+export default function ProductoTuberculo() {
+  const producto = productos.find(p => p.slug === 'maceta-tuberculo');
+  const defaultVariante = producto.variantes.find(v => v.litros === DEFAULT_LITROS);
+  const [selected, setSelected] = useState(defaultVariante);
 
   const waLink = `https://wa.me/${marca.whatsapp}?text=${encodeURIComponent(
-    `Hola ${marca.nombre}, me interesa el mulching geotextil`
+    `Hola ${marca.nombre}, me interesa la maceta tubérculo de ${selected.litros} L`
   )}`;
 
   return (
     <div className="min-h-screen bg-white font-sans">
       <div className="h-20" />
 
-      {/* ── IMAGEN + INFO ── */}
       <div className="max-w-5xl mx-auto px-4">
         <div className="md:flex md:gap-12 items-start">
 
@@ -43,13 +41,16 @@ export default function ProductoMulching() {
             <div className="flex-1 flex items-center">
               <div className="w-full aspect-square bg-white overflow-hidden rounded-sm border border-brand-green/20">
                 <img
-                  src={producto.imagen}
-                  alt={producto.nombre}
-                  className="w-full h-full object-cover"
-                  loading="eager"
+                  key={selected.imagen}
+                  src={selected.imagen}
+                  alt={`${producto.nombre} ${selected.litros} L`}
+                  className="w-full h-full object-contain animate-fade-in"
                 />
               </div>
             </div>
+            <p className="font-mono text-xs text-brand-text/40 text-center mt-3">
+              Gramaje {producto.gramaje} en todas las medidas
+            </p>
           </div>
 
           {/* Info */}
@@ -70,77 +71,59 @@ export default function ProductoMulching() {
               </p>
             </blockquote>
 
+            <div className="border-t border-brand-green/10 mb-6" />
+
+            {/* Selector de medida */}
+            <div className="mb-5">
+              <p className="font-mono text-xs text-brand-green uppercase tracking-widest mb-3">
+                Medida — <span className="text-brand-green-dark font-bold">{selected.litros} L</span>
+              </p>
+              <div className="flex rounded-sm border border-brand-green/20 w-fit overflow-hidden">
+                {producto.variantes.map(v => (
+                  <button
+                    key={v.litros}
+                    onClick={() => setSelected(v)}
+                    className={`font-mono text-sm font-semibold px-6 py-2.5 transition-all focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-yellow ${
+                      selected.litros === v.litros
+                        ? 'bg-brand-green-dark text-white'
+                        : 'text-brand-green-dark hover:bg-brand-green/5'
+                    }`}
+                  >
+                    {v.litros} L
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Medidas */}
+            <div className="mb-5">
+              <p className="font-mono text-xs text-brand-green uppercase tracking-widest mb-1">
+                Medidas (Ø × alto)
+              </p>
+              <p className="font-mono font-bold text-brand-green-dark text-xl">
+                {selected.medidas}
+              </p>
+            </div>
+
             {/* Precio + CTA */}
-            <div className="flex items-center gap-4 mb-7 flex-wrap">
-              <span className="font-mono font-bold text-brand-green-dark text-xl">
-                {producto.precio}
-              </span>
+            <div className="mb-0">
+              <p className="font-mono text-xs text-brand-green uppercase tracking-widest mb-1">
+                Precio
+              </p>
+              <p className="font-mono font-bold text-brand-green-dark text-2xl mb-6">
+                {selected.precio}
+              </p>
               <a
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-brand-yellow text-brand-green-dark font-bold px-6 py-3 rounded-sm hover:brightness-95 transition-all focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
+                className="inline-flex items-center gap-2 bg-brand-yellow text-brand-green-dark font-bold px-8 py-4 rounded-sm hover:brightness-95 transition-all w-full sm:w-auto justify-center sm:justify-start focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2"
               >
                 <WaIcon />
-                Consultar por WhatsApp
+                Consultar {selected.litros} L por WhatsApp
               </a>
             </div>
 
-            {/* Ficha técnica */}
-            <div>
-              <h2 className="font-mono text-xs text-brand-green uppercase tracking-widest mb-3">
-                Ficha técnica
-              </h2>
-              <div className="border border-brand-green/10 rounded-sm overflow-hidden">
-                {producto.fichaTecnica.map((f, i) => (
-                  <div
-                    key={f.clave}
-                    className={`flex gap-4 px-4 py-2.5 ${i % 2 === 0 ? 'bg-white' : 'bg-brand-cream/30'}`}
-                  >
-                    <span className="font-mono text-brand-text/50 text-xs w-36 flex-shrink-0 leading-relaxed pt-0.5">
-                      {f.clave}
-                    </span>
-                    <span className="font-mono text-brand-green-dark text-xs leading-relaxed">
-                      {f.valor}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── POR QUÉ EL MULCHING ES CLAVE ── */}
-      <div className="bg-brand-green-dark py-16 px-4 mt-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-bold text-white text-xl sm:text-2xl uppercase tracking-tight mb-10 text-center">
-            {producto.razonesTitle}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {producto.razones.map((r, i) => (
-              <div key={i} className="flex gap-4 items-start">
-                <CheckIcon />
-                <div>
-                  <h3 className="font-bold text-white text-sm mb-1 uppercase tracking-wide">
-                    {r.titulo}
-                  </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{r.descripcion}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-brand-yellow text-brand-green-dark font-bold px-8 py-4 rounded-sm hover:brightness-95 transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-green-dark"
-            >
-              <WaIcon />
-              Consultar por WhatsApp
-            </a>
           </div>
         </div>
       </div>
