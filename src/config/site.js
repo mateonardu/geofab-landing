@@ -353,17 +353,17 @@ export const sobre = {
 
 export const diferenciales = [
   {
-    icono: '🌱',
+    icono: 'raices',
     titulo: 'Raíces más sanas',
     texto:  'La tela promueve la poda aérea natural. Sin raíces circulares ni espirales. Mayor densidad radicular activa.',
   },
   {
-    icono: '💧',
+    icono: 'drenaje',
     titulo: 'Sin pudrición radicular',
     texto:  'Drenaje libre y aireación constante. Sin acumulación de humedad excesiva. Control hídrico preciso.',
   },
   {
-    icono: '📈',
+    icono: 'crecimiento',
     titulo: 'Mayor productividad',
     texto:  'Mejor absorción de nutrientes y oxígeno en la zona radicular. Cultivos más fuertes y uniformes.',
   },
