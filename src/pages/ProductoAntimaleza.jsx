@@ -33,7 +33,7 @@ export default function ProductoAntimaleza() {
         <div className="md:flex md:gap-12 items-start">
 
           {/* Imagen: panel estático con breadcrumb arriba */}
-          <div className="w-3/5 mx-auto md:mx-0 md:w-1/2 md:sticky md:top-20 md:h-[calc(100vh-5rem)] flex flex-col pt-14 pb-4 md:pt-16 md:pb-6">
+          <div className="hidden md:flex md:w-1/2 md:sticky md:top-20 md:h-[calc(100vh-5rem)] flex-col md:pt-16 md:pb-6">
             <Link
               to="/#catalogo"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-green hover:text-brand-green-dark transition-colors mb-6"
@@ -58,22 +58,16 @@ export default function ProductoAntimaleza() {
           {/* Info scrollable */}
           <div className="w-full md:w-1/2 relative z-10 pt-14 pb-8 md:pt-16">
 
-            {/* Selector de variante */}
-            <div className="flex mb-7 rounded-sm border border-brand-green/20 w-fit overflow-hidden">
-              {producto.variantes.map(v => (
-                <button
-                  key={v.id}
-                  onClick={() => setSelected(v)}
-                  className={`font-mono text-sm font-semibold px-6 py-2.5 transition-all focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-yellow ${
-                    selected.id === v.id
-                      ? 'bg-brand-green-dark text-white'
-                      : 'text-brand-green-dark hover:bg-brand-green/5'
-                  }`}
-                >
-                  {v.id} grs
-                </button>
-              ))}
-            </div>
+            {/* Breadcrumb — mobile only */}
+            <Link
+              to="/#catalogo"
+              className="md:hidden inline-flex items-center gap-1.5 text-sm font-medium text-brand-green hover:text-brand-green-dark transition-colors mb-6"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+              Volver al catálogo
+            </Link>
 
             {/* Encabezado */}
             <span className="font-mono text-brand-green text-xs uppercase tracking-widest mb-2 block">
@@ -90,6 +84,35 @@ export default function ProductoAntimaleza() {
                 {selected.tagline}
               </p>
             </blockquote>
+
+            {/* Imagen — mobile only */}
+            <div className="md:hidden mb-5">
+              <div className="w-3/4 mx-auto aspect-square bg-white overflow-hidden rounded-sm border border-brand-green/20">
+                <img
+                  key={`m-${selected.imagen}`}
+                  src={selected.imagen}
+                  alt={selected.nombre}
+                  className="w-full h-full object-cover animate-fade-in"
+                />
+              </div>
+            </div>
+
+            {/* Selector de variante */}
+            <div className="flex mb-7 rounded-sm border border-brand-green/20 w-fit overflow-hidden">
+              {producto.variantes.map(v => (
+                <button
+                  key={v.id}
+                  onClick={() => setSelected(v)}
+                  className={`font-mono text-sm font-semibold px-6 py-2.5 transition-all focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-yellow ${
+                    selected.id === v.id
+                      ? 'bg-brand-green-dark text-white'
+                      : 'text-brand-green-dark hover:bg-brand-green/5'
+                  }`}
+                >
+                  {v.id} grs
+                </button>
+              ))}
+            </div>
 
             {/* Precio + CTA */}
             <div className="flex items-center gap-4 mb-7 flex-wrap">
