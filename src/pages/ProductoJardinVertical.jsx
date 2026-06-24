@@ -38,7 +38,7 @@ export default function ProductoJardinVertical() {
         <div className="md:flex md:gap-12 items-start">
 
           {/* Imagen sticky con breadcrumb */}
-          <div className="w-full md:w-1/2 md:sticky md:top-20 md:h-[calc(100vh-5rem)] flex flex-col pt-14 pb-8 md:pt-16 md:pb-6">
+          <div className="w-full md:w-1/2 sticky top-20 h-[45vh] md:h-[calc(100vh-5rem)] flex flex-col pt-3 pb-2 md:pt-16 md:pb-6 z-20 bg-white">
             <Link to="/#catalogo" className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-green hover:text-brand-green-dark transition-colors mb-6">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
