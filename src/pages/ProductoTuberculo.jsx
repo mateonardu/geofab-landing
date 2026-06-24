@@ -28,7 +28,7 @@ export default function ProductoTuberculo() {
         <div className="md:flex md:gap-12 items-start">
 
           {/* Imagen con breadcrumb arriba */}
-          <div className="w-full md:w-1/2 sticky top-20 h-[45vh] md:h-[calc(100vh-5rem)] flex flex-col pt-3 pb-2 md:pt-16 md:pb-6 z-20 bg-white">
+          <div className="w-3/5 mx-auto md:mx-0 md:w-1/2 md:sticky md:top-20 md:h-[calc(100vh-5rem)] flex flex-col pt-14 pb-4 md:pt-16 md:pb-6">
             <Link
               to="/#catalogo"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-green hover:text-brand-green-dark transition-colors mb-6"
